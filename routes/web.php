@@ -31,3 +31,14 @@ Route::get('/dosen/{namaDosen}', function($namaDosen){
     ]);
 });
 
+Route::redirect('/iniLinkYangSalah', '/mahasiswa');
+
+Route::prefix('/admin')->group(function(){
+    Route::get('/listDosen', function(){
+        return view('admin.listDosen');
+    });
+
+    Route::get('/listMahasiswa', function(){
+        return view('admin.listMahasiswa');
+    });
+});
