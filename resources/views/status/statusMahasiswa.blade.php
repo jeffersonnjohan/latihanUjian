@@ -9,8 +9,17 @@
 <body>
     @foreach ($mahasiswas as $mahasiswa)
         <h1>Nama: {{ $mahasiswa['nama'] }}</h1>
-        <p>Status: {{ $mahasiswa['status'] }}</p>
+    
+        @if($mahasiswa['status'] == 'Aktif')
+            <p style='color: green;'>Status: {{ $mahasiswa['status'] }}</p>
+        @elseif($mahasiswa['status'] == 'Tidak Aktif')
+            <p style='color: red;'>Status: {{ $mahasiswa['status'] }}</p>
+        @else
+            <p style='color: yellow;'>Status: {{ $mahasiswa['status'] }}</p>
+        @endif
     @endforeach
+
+    @include('component.buttonBackToHome')
 </body>
 </html>
 
