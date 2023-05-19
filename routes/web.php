@@ -42,3 +42,33 @@ Route::prefix('/admin')->group(function(){
         return view('admin.listMahasiswa');
     });
 });
+
+
+Route::get('/admin/listDosen', function(){
+    return view('admin.listDosen');
+});
+
+Route::get('/admin/listMahasiswa', function(){
+    return view('admin.listDosen');
+});
+
+Route::get('/statusMahasiswa', function(){
+    $mahasiswas = [
+        [
+            'nama' => 'Jefferson Johan',
+            'status' => 'Aktif'
+        ],
+        [
+            'nama' => 'Brychan Artanto',
+            'status' => 'Cuti'
+        ],
+        [
+            'nama' => 'Riskya Putra Sembiring',
+            'status' => 'Tidak Aktif'
+        ]
+    ];
+
+    return view('status.statusMahasiswa', [
+        'mahasiswas' => $mahasiswas
+    ]);
+});
