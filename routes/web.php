@@ -19,4 +19,4 @@ Route::get('/', function () {
 
 Route::get('/mahasiswa', function(){
     return view('profile.profileMahasiswa');
-})
+});
