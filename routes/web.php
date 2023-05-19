@@ -18,5 +18,16 @@ Route::get('/', function () {
 });
 
 Route::get('/mahasiswa', function(){
-    return view('profile.profileMahasiswa');
+    return view('profile.profileMahasiswa', [
+        'nama' => 'Jefferson Johan',
+        'NIM' => '2502041224',
+        'cawu' => 5
+    ]);
 });
+
+Route::get('/dosen/{namaDosen}', function($namaDosen){
+    return view('profile.profileDosen', [
+        'nama' => $namaDosen
+    ]);
+});
+

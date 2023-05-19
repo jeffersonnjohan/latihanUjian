@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile Mahasiswa</title>
+    <title>Profile Dosen</title>
 </head>
 <body>
-    <h1>{{ $nama }}</h1>
-    <p>NIM: {{ $NIM }}</p>
-    <p>Cawu: {{ $cawu }}</p>
+    <h1>Nama Dosen: {{ $nama }}</h1>
 </body>
 </html>
 
