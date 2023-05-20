@@ -81,3 +81,15 @@ Route::get('/login', function(){
 Route::get('/allMahasiswa', [MahasiswaController::class, 'all']);
 
 Route::get('/insertMahasiswa', [MahasiswaController::class, 'insert']);
+
+Route::get('/singleMahasiswa/{id}', [MahasiswaController::class, 'single']);
+
+Route::get('/updateMahasiswa/{id}', [MahasiswaController::class, 'update']);
+
+Route::get('/deleteMahasiswa/{id}', [MahasiswaController::class, 'delete']);
+
+Route::get('/smartMahasiswa', [MahasiswaController::class, 'smartMahasiswa']);
+
+Route::get('/urutNama', [MahasiswaController::class, 'urutNama']);
+
+Route::get('/orCondition', [MahasiswaController::class, 'orCondition']);
