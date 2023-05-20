@@ -15,6 +15,15 @@ return new class extends Migration
     {
         Schema::create('mahasiswas', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('NIM')->unique();
+            $table->text('motto')->nullable();
+            $table->longText('address');
+            $table->foreignId('campus_id');
+            $table->date('DOB');
+            $table->boolean('isAdmin')->default(false);
+            $table->double('ipk');
+            $table->integer('cawu');
             $table->timestamps();
         });
     }
