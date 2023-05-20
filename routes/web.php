@@ -72,3 +72,8 @@ Route::get('/statusMahasiswa', function(){
         'mahasiswas' => $mahasiswas
     ]);
 });
+
+Route::get('/login', function(){
+    return view('login');
+});
+
