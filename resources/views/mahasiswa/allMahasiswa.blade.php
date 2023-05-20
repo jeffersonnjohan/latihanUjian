@@ -8,8 +8,8 @@
 </head>
 <body>
     @foreach ($mahasiswas as $mahasiswa)
-        <h1>Nama : {{ $mahasiswa['nama'] }}</h1>
-        <p>Status : {{ $mahasiswa['status'] }}</p>
+        <h1>Nama : {{ $mahasiswa->nama }}</h1>
+        <p>NIM : {{ $mahasiswa->NIM }}</p>
     @endforeach
 </body>
 </html>

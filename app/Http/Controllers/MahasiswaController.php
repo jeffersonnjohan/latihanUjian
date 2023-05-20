@@ -2,27 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 
 class MahasiswaController extends Controller
 {
-    public $mahasiswas = [
-        [
-            'nama' => 'Jefferson Johan',
-            'status' => 'Aktif'
-        ],
-        [
-            'nama' => 'Brychan Artanto',
-            'status' => 'Cuti'
-        ],
-        [
-            'nama' => 'Riskya Putra Sembiring',
-            'status' => 'Tidak Aktif'
-        ]
-    ];
     public function all(){
         return view('mahasiswa.allMahasiswa', [
-            'mahasiswas' => $this->mahasiswas
+            'mahasiswas' => Mahasiswa::all()
+        ]);
+    }
+
+    public function insert(){
+        Mahasiswa::create([
+            'nama' => 'Riskya Putra Sembiring',
+            'NIM' => '2502041267',
+            'motto' => 'Jika tanpa kamu, aku tak dapat hidup lagi',
+            'address' => 'Jalan Kemerdekaan Medan',
+            'campus_id' => 5,
+            'DOB' => '2003-04-22',
+            'ipk' => 3.98,
+            'cawu' => 3,
         ]);
     }
 }

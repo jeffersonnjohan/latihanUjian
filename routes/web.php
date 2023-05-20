@@ -79,3 +79,5 @@ Route::get('/login', function(){
 });
 
 Route::get('/allMahasiswa', [MahasiswaController::class, 'all']);
+
+Route::get('/insertMahasiswa', [MahasiswaController::class, 'insert']);
