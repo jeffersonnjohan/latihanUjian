@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\MahasiswaController;
+use App\Models\Mahasiswa;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MahasiswaController;
+use App\Models\Human;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,3 +95,9 @@ Route::get('/smartMahasiswa', [MahasiswaController::class, 'smartMahasiswa']);
 Route::get('/urutNama', [MahasiswaController::class, 'urutNama']);
 
 Route::get('/orCondition', [MahasiswaController::class, 'orCondition']);
+
+Route::get('/relationshipOneToOne', function(){
+    return view('relationshipOneToOne.profileHuman', [
+        'human' => Human::find(1)
+    ]);
+});
