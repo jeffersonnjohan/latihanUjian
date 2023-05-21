@@ -1,9 +1,10 @@
 <?php
 
+use App\Models\Post;
+use App\Models\Human;
 use App\Models\Mahasiswa;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
-use App\Models\Human;
 
 /*
 |--------------------------------------------------------------------------
@@ -101,3 +102,10 @@ Route::get('/relationshipOneToOne', function(){
         'human' => Human::find(1)
     ]);
 });
+
+Route::get('/relationshipOneToMany', function(){
+    return view('relationshipOneToMany.allPost', [
+        'posts' => Post::all()
+    ]);
+});
+

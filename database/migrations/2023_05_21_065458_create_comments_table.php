@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('hearts', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('humanID')
-                ->references('human_id')
-                ->on('humans')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-            $table->double('volume');
+            $table->foreignID('post_id')->references('id')->on('posts');
+            $table->text('message');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hearts');
+        Schema::dropIfExists('comments');
     }
 };

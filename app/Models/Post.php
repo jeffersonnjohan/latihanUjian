@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Heart extends Model
+class Post extends Model
 {
     use HasFactory;
 
-    public function user(){
-        return $this->belongsTo(Human::class, 'humanID', 'human_id');
+    protected $guarded = ['id'];
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
     }
 }
