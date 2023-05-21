@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Post;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Faker\Factory as Faker;
 
 class PostSeeder extends Seeder
 {
@@ -27,5 +28,15 @@ class PostSeeder extends Seeder
             'title' => 'Tata Cara Bermain Golf yang Baik',
             'image' => 'riskyaGanteng.jpg'
         ]);
+
+        $faker = Faker::create('id_ID');
+
+        for($i = 0; $i < 10; $i++){
+            Post::create([
+                'title' => $faker->sentence(),
+                'image' => $faker->word().'.jpg',
+            ]);
+        }
+
     }
 }
